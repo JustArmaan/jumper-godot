@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2lgorfxg2co1"]
+[gd_scene load_steps=3 format=3 uid="uid://c2lgorfxg2co1"]
 
 [ext_resource type="Script" uid="uid://cqf54r30jwb21" path="res://scripts/killzone.gd" id="1_xlapc"]
 [ext_resource type="Texture2D" uid="uid://0gtm2y0ybbpa" path="res://assets/sprites/You fell and died.png" id="2_kl8fp"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kl8fp"]
 
 [node name="Killzone" type="Area2D"]
 collision_mask = 2
@@ -29,9 +27,6 @@ grow_vertical = 2
 texture = ExtResource("2_kl8fp")
 expand_mode = 2
 stretch_mode = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("WorldBoundaryShape2D_kl8fp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
